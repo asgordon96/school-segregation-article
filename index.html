@@ -1,0 +1,318 @@
+<!-- 
+Aaron Gordon
+CSE 557A - Assignment 5
+Sources referenced:
+https://bl.ocks.org/mbostock/3885304
+https://bl.ocks.org/mbostock/3371592
+https://stackoverflow.com/questions/11252753/rotate-x-axis-text-in-d3
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>School Segregation</title>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="utility.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    	<div class="text">
+    		<h1 class="hed" itemprop="headline">School Segregation Is Not a Myth </h1>
+            <p class="dek" itemprop="description">Skeptics claim that concerns over racially divided schools are false alarms—but they’re missing the full picture.</p>
+
+            By <a href="https://www.theatlantic.com/author/will-stancil/"><span>Will Stancil</span></a>
+            </span></li><span>Mar 14, 2018</span>
+            <br/>
+            <span>Link to the <a href="https://www.theatlantic.com/education/archive/2018/03/school-segregation-is-not-a-myth/555614/">Source Article</a>
+            <hr/>
+
+    		<section id="article-section-1"><p>Is school segregation getting worse?</p><p>Plenty of people say yes, including <a href="https://civilrightsproject.ucla.edu/research/k-12-education/integration-and-diversity/brown-at-60-great-progress-a-long-retreat-and-an-uncertain-future/" data-omni-click="r'article',r'',d,r'intext',r'0',r'555614'">scholars</a>, <a href="https://www.theatlantic.com/magazine/archive/2014/05/segregation-now/359813/" data-omni-click="r'article',r'',d,r'intext',r'1',r'555614'">journalists</a>, and <a href="http://www.usccr.gov/pubs/2018-01-10-Education-Inequity.pdf" data-omni-click="r'article',r'',d,r'intext',r'2',r'555614'">civil-rights advocates</a>. For the first time in years, there’s something approximating a consensus: Racially divided schools are a major and intensifying problem for American education—maybe even a <a href="https://www.nbcnews.com/think/opinion/resegregation-america-ncna801446" data-omni-click="r'article',r'',d,r'intext',r'3',r'555614'">crisis</a>.</p><p>There’s seemingly compelling numerical evidence, too. According to my analysis of data from the National Center on Education Statistics, the number of segregated schools (defined in this analysis as those schools where less than 40 percent of students are white), has approximately doubled between 1996 and 2016. In that same span, the percentage of children of color attending such a school rose from 59 to 66 percent. For black students, the percentage in segregated schools rose even faster, from 59 to 71 percent.</p>
+
+    		<p>But not everyone is on board. In the eyes of some writers, the warning signs of segregation are all a false alarm—little more than a statistical mirage. The <em>National Review </em>writer Robert VerBruggen <a href="https://www.nationalreview.com/magazine/2018/02/17/the-resegregation-myth/" data-omni-click="r'article',r'',d,r'intext',r'4',r'555614'">recently made this case</a>, attacking what he called the “resegregation myth.” VerBruggen and other skeptics contend that methods meant to identify school segregation are instead detecting something much more benign: The growing diversity of the American population.</p></section>
+
+    		<p>This is possible because many measures of school segregation are narrow, focusing only on a single symptom. For instance, one common research technique is to count the number of schools above a certain demographic cutoff (for instance, more than 90 percent nonwhite). Another is to focus on “exposure,” or how common it is for white and nonwhite students to encounter each other in the education system.</p>
+    		<p>Doubters like VerBruggen argue that people using these metrics have been fooled by demographic change. The past several decades have seen a precipitous increase in the racial diversity of U.S. schoolchildren. For example, since 1996, the share of Hispanic and Asian students in public schools has grown from 17 to 31 percent. As a result, across the board, schools have tended to become less white.</p>
+    		<p>When diversity increases, some measures of segregation are likely to get worse, more or less by default. For instance, if an integrated school is growing, but most of the new students are Hispanic, at some point, it’ll tip over and become segregated. If white students become a smaller share of the American population overall, all else equal, “exposure” to white students will probably decline.</p>
+    		<p>VerBruggen claims that this shift, and little else, is responsible for the perceived crisis. “The rise in ‘segregation’ disappears when one measures segregation properly,” he asserts. He and others say that, with slim evidence of increasing segregation, policies designed to proactively integrate schools are an obsolete form of social engineering.</p></section>
+
+    		<section id="article-section-3"><p>It’s a simple case. Too simple: There is plenty of evidence that resegregation is urgently real.</p>
+    		<p>School segregation seems like it would be easy to gauge: Just add up the number of segregated schools, and see whether that number is going up or down over time. But the reality, unfortunately, is a lot more complicated.</p>
+    		<p>The core problem is that the nation’s schools are evolving in many ways at once. Student populations undergo slow shifts; new schools are constantly opening and closing; attendance boundaries are drawn and redrawn. As a result, the effects of large-scale demographic change and those of local school policy get tangled up with one another. It can be hard for researchers to separate one factor from the other.</p>
+
+    		<p>Making things even tougher, increased national diversity tends to generate mixed signals about whether segregation is happening. As skeptics like Verbruggen point out, some measures of segregation, especially those that focus on the prevalence of white students, tend to look worse when student diversity increases. But other measures tend to look better. For example, one statistic known as a “dissimilarity index” calculates how many people would have to swap places to achieve demographic balance. When diversity increases evenly, dissimilarity indexes will <em>improve</em>—because the share of minority students in the least-integrated schools will grow, making fewer swaps necessary.</p></section>
+
+    		<section id="article-section-4"><p>Contrary to the assertions of VerBruggen and others, there is broad statistical evidence of new racial stratification in schools. A recent (and helpfully illustrated) <a href="https://www.vox.com/2018/3/5/17080218/school-segregation-getting-worse-data" data-omni-click="r'article',r'',d,r'intext',r'5',r'555614'">piece in <em>Vox</em></a> runs through some of that evidence, focusing on the changing role of attendance boundaries. The short version: Entire school districts are becoming more racially distinct from each other, even while racial diversity within those districts may be increasing.</p>
+    		<p>In addition, while sweeping statistical indices have their uses, they tend to overlook some lower-level trends, like school openings and closures. That’s a major blind spot when talking about the causes of new segregation. According to my analysis of the most recently available federal data, closures are about three times as common among segregated schools, and new schools account for a substantial share of current segregation. In 2016, 38 percent of all segregated schools had opened within the last two decades, compared to 20 percent of predominantly white and integrated schools. In at least this sense, nearly four-tenths of educational segregation is the result of students being shuffled into newly opened schools.</p>
+    		<p>And there are other numbers that suggest a worsening trend. Almost everybody agrees that economic segregation is growing in schools, and many of those dubious about racial segregation like to advance this idea as a competing, alternative theory for educational inequality. But while income segregation can be simpler to measure than race, race and income are closely interwoven. The poorest schoolchildren are very disproportionately nonwhite; <a href="https://www.theatlantic.com/politics/archive/2015/11/why-poverty-and-segregation-merge-at-public-schools/433380/" data-omni-click="r'article',r'',d,r'intext',r'6',r'555614'">the poorest schools are usually racially segregated</a>. The existence of economic segregation does not contradict evidence of racial segregation—it helps confirm it. It shows that, underneath the confounding effects of growing diversity, American schoolchildren are still being divided on the basis of social caste.</p></section>
+
+    		<section id="article-section-5"><p>While resegregation skeptics are relying on oversimplified statistical evidence, there are even larger holes in their argument. One major reason civil-rights advocates fear resegregation is because they’ve directly observed changes to school policy that seem likely to contribute to racial isolation. Changes like this won’t necessarily show up in statistical measures of student demographics—at least, not right away—but they’re still important.</p>
+    		<p>For example, most researchers believe that court-ordered integration plans, maintained by many school districts throughout the 1970s and 80s, were effective at reducing segregation. But since the turn of the century, hundreds of court orders have been terminated, and virtually no new ones have been created.</p>
+
+		    <p>In places where segregation is already firmly established, government action can have the effect of “locking in” those racial lines. Here, an analogy might help: Imagine a housing subdivision where almost everyone is white, surrounded by neighborhoods that are heavily nonwhite. Now, imagine that the subdivision builds a large wall, hires a security guard for the entrance, and refuses to sell houses to anyone new. You’d be hard-pressed to argue these changes weren’t segregative, even if, for the time being, everyone continues to live in the same place.</p>
+
+		    <p>In American schools, metaphorical walls are going up all over the place. For instance, school districts in the south are traditionally larger than elsewhere in the country, often including entire counties. As a practical matter, this makes southern districts easier to integrate: Their wide expanse means they contain many white and nonwhite students alike. But in recent years, southern districts have begun to fragment. Sometimes this is caused by white neighborhoods and cities that <a href="https://www.theatlantic.com/education/archive/2018/02/a-bittersweet-victory-for-school-desegregation/554396/" data-omni-click="r'article',r'',d,r'intext',r'7',r'555614'">attempt to “secede” and form their own, all-white districts</a>. In other places, fragmentation is driven by statewide political forces, such as in North Carolina, where a conservative legislature is currently weighing <a href="http://www.newsobserver.com/news/politics-government/state-politics/article199908649.html" data-omni-click="r'article',r'',d,r'intext',r'8',r'555614'">breaking up large districts</a>. No matter the cause, the ongoing splintering of districts places integration further out of reach.</p></section>
+
+		    <section id="article-section-6"><p>In Memphis, Tennessee, for example, <a href="https://www.chalkbeat.org/posts/tn/2017/06/21/memphis-shelby-county-spotlighted-in-national-report-on-school-district-secession/" data-omni-click="r'article',r'',d,r'intext',r'9',r'555614'">new racial lines</a> are being drawn around the area’s schools. In 2013 the majority-black Memphis city school district merged with the schools of the surrounding county, which were majority-white. At first blush, this was a move that promised integration. That is, until the next year, when six cities seceded from the merged district. Five of the six new districts are even whiter than the original county district had been—a new geography of segregation, freshly imposed.</p>
+
+		    <p>And there are other ways to raise barriers to integration. In many big-city school districts, policymakers have spurred the growth of new charter schools to compete with traditional public schools. But because charters usually operate independently of the district they’re in, students transferring into them can’t be as easily included in a district’s integration plans. This is another form of fragmentation, with charters acting as islands, administratively detached from the district around them. Perhaps not coincidentally, charters are also usually <a href="https://www.apnews.com/e9c25534dfd44851a5e56bd57454b4f5" data-omni-click="r'article',r'',d,r'intext',r'10',r'555614'">highly segregated</a>, with students often <a href="http://blog.opportunity.mn/2017/12/charter-schools-contribute-to-racial.html" data-omni-click="r'article',r'',d,r'intext',r'11',r'555614'">sorted into distinct racial groups</a>. Legal barriers are still barriers; this, too, is resegregation.</p>
+		    <h3>Charter Schools vs. Traditional Public Schools</h3>
+		    <p>The visualization below shows a comparison of charter and non-charter public schools. All data are averages of over 5,000 charter schools and over 80,000 non-charter public schools. The neighborhood demographics are for ages 18 and under within a 2 mile radius of the school. Imbalance is defined as: Percent in the school - Percent in the neighborhood. <a href="https://www.brookings.edu/research/60-years-after-brown-v-board-of-education-how-racially-balanced-are-americas-public-schools/">Data Source</a></p>
+       	</div>
+        <script type="text/javascript">
+        	// create the SVG canvas
+        	var width = 1000;
+        	var height = 880;
+        	var height_margin_top = 25;
+        	var height_margin_bottom = 25;
+        	var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+
+        	var chart_left_margin = 60;
+        	var chart_height = 400;
+
+        	// parameters for the visualization
+        	var bar_width = 20;
+        	var bar_space = 20;
+        	var chart_width = 5*(2*bar_width + bar_space);
+        	var chart_padding = 125;
+
+        	// draw the legend
+        	var legend = svg.append("g").attr("class", "legend").attr("transform", "translate(25,10)");
+        	legend.append("rect").attr("x", 0).attr("y", 0).attr("width", 25).attr("height", 25).attr("class", "charter-legend");
+        	legend.append("rect").attr("x", 0).attr("y", 35).attr("width", 25).attr("height", 25).attr("class", "noncharter-legend");
+        	legend.append("text").attr("x", 30).attr("y", 17).text("Charter Schools");
+        	legend.append("text").attr("x", 30).attr("y", 52).text("Public Non-Charter Schools");
+
+        	// setup the tooltip div
+        	var tooltip = d3.select("body").append("div").attr("class", "tooltip");
+        	var tooltip_header = tooltip.append("h3");
+            var tooltip_body = tooltip.append("p");
+
+        	// load the data for the charter vs. non-charter school visualization
+        	d3.csv("charter_summary.csv", function(d) {
+        		// convert values to numbers
+        		d.Enrollment = +d.Enrollment;
+        		d.Percentage = +d.Percentage;
+        		d.Imbalance = +d.Imbalance;
+        		d.Twomile = +d.Twomile;
+        		d.Fivemile = +d.Fivemile;
+        		d.Fill1 = + d.Fill1;
+        		d.Fill2 = + d.Fill2;
+        		d.Fill5 = + d.Fill5;
+        		return d;
+        	}, 
+        	function(charter_data) {
+	        		// load the data for the charter vs. non-charter school visualization
+	        	d3.csv("noncharter_summary.csv", function(d) {
+	        		// convert values to numbers
+	        		d.Enrollment = +d.Enrollment;
+	        		d.Percentage = +d.Percentage;
+	        		d.Imbalance = +d.Imbalance;
+	        		d.Twomile = +d.Twomile;
+	        		d.Fivemile = +d.Fivemile;
+	        		d.Fill1 = + d.Fill1;
+	        		d.Fill2 = + d.Fill2;
+	        		d.Fill5 = + d.Fill5;
+	        		return d;
+	        	},
+	        	function(noncharter_data) { 
+
+					function create_bar_chart(attr, x_offset, y_offset) {
+						// the big svg group to translate
+						var translation = "translate(" + x_offset + "," + y_offset + ")";
+						var group = svg.append("g").attr("transform", translation);
+
+						// the x axis
+						var labels = charter_data.map(function(d) { return d.race; });
+						var x_scale = d3.scaleBand().domain(labels)
+						                .rangeRound([0, chart_left_margin + chart_width]).padding(0.4);
+
+						// the x axis
+						var translate_x = chart_left_margin;
+						var translate_y = chart_height - height_margin_bottom;
+						var translate = "translate(" + translate_x + "," + translate_y + ")";
+						var x_axis_group = group.append("g").attr("transform", translate).call(d3.axisBottom(x_scale));
+
+						// first set the appropriate y scale
+						var charter_range = get_range(charter_data, attr);
+						var noncharter_range = get_range(noncharter_data, attr);
+						var min_value = Math.min(charter_range[0], noncharter_range[0]);
+						var max_value = Math.max(charter_range[1], noncharter_range[1]);
+
+						var negative_values = false;
+						// handle possible negative values in the chart
+						if (min_value > 0) {
+						    min_value = 0;
+						}
+						else {
+							negative_values = true;
+						}
+
+						var y_scale = d3.scaleLinear();
+						y_scale.domain([min_value, max_value]).range([chart_height - height_margin_bottom, height_margin_top]);
+
+						// y scale for only the axis, not the data
+						if (attr != "Enrollment") {
+							min_value = min_value / 100;
+							max_value = max_value / 100;
+						}
+						var y_scale_axis = d3.scaleLinear().domain([min_value, max_value])
+						                                   .range([chart_height - height_margin_bottom, height_margin_top]);
+
+						if (negative_values) {
+							// if there are negative values, delete the axis line at the bottom of the chart
+							// and draw a line at 0
+							x_axis_group.select(".domain").remove();
+							x_axis_group.selectAll("line").remove();
+							group.append("line").attr("x1", chart_left_margin).attr("y1", y_scale(0))
+												.attr("x2", chart_left_margin + chart_width).attr("y2", y_scale(0))
+												.attr("stroke-width", 1).attr("stroke", "black");
+						}
+
+						// format as percentages if it is not enrollment
+						var y_axis_class = d3.axisLeft(y_scale_axis);
+	        		    if (attr != "Enrollment") {
+	        		    	y_axis_class.tickFormat(d3.format(".0%"))
+	        		    }
+
+						// update and draw the y axis scale 
+	        		    var translate = "translate(" + chart_left_margin + ",0)";
+	        		    group.append("g").attr("class", "yaxis").attr("transform", translate)
+	        		      .call(y_axis_class);
+
+	        		    // the y axis label
+	        		    var y_labels = { "Enrollment" : "Enrollment", 
+	        		                     "Percentage" : "Percentage of Students", 
+	        		                     "Imbalance" : "Imbalance Compared to Neighborhood",
+	        		                     "Twomile" : "Neighborhood Demographics" }
+
+	        		    var x = chart_left_margin / 3;
+	        		    var y = chart_height / 2;
+	        		    var transform = "translate(" + x + "," + y + ")rotate(-90)";
+	        		    group.append("text").attr("class", "yaxislabel").text(y_labels[attr]).attr("transform", transform)
+	        		         .attr("text-anchor", "middle");
+
+		        		// create the rects for the bar graph for charter schools
+		        		var charter_class = attr + "-" + "charter";
+		        		group.selectAll("rect." + attr).data(charter_data).enter().append("rect")
+		        		  .attr("class", charter_class + " charter")
+		        		  .attr("width", bar_width)
+		        		  .attr("x", function(d, i) {
+		        		  	return x_scale(labels[i]) + chart_left_margin;
+		        		  })
+		        		  .attr("y",  function(d) {
+	        		  	     var bar_height = y_scale(0) - y_scale(d[attr]);
+	        		  	     if (bar_height < 0) {
+	        		  	     	return y_scale(0)
+	        		  	     }
+	        		  	     else {
+	        		  	     	return y_scale(0) - bar_height;
+	        		  	     }
+	        		      })
+	        		      .attr("height", function(d) {
+	        		  	     return Math.abs(y_scale(0) - y_scale(d[attr]));
+	        		      });
+
+						// create the rects for the bar graph for non-charter schools
+						var noncharter_class = attr + "-" + "noncharter";
+						group.selectAll("rect.noncharter").data(noncharter_data).enter().append("rect")
+							.attr("class", noncharter_class + " noncharter")
+							.attr("width", bar_width)
+							.attr("x", function(d, i) {
+								return x_scale(labels[i]) + bar_width + chart_left_margin;
+							})
+							.attr("y",  function(d) {
+								var height = y_scale(0) - y_scale(d[attr]);
+								if (height < 0) {
+									return y_scale(0)
+								}
+								else {
+									return y_scale(0) - height;
+								}
+					      })
+					      .attr("height", function(d) {
+							return Math.abs(y_scale(0) - y_scale(d[attr]));
+						});
+					}
+
+					// by default, show enrollment
+					var top_margin = 70;
+					create_bar_chart("Enrollment", 0, top_margin);
+					create_bar_chart("Percentage", chart_width + chart_padding, top_margin);
+					create_bar_chart("Imbalance", 0, top_margin + chart_height);
+					create_bar_chart("Twomile", chart_width + chart_padding, top_margin + chart_height);
+
+					// set the tooltip text to the head and the body
+					// and display the tooltip at the current mouse location
+					function set_tooltip(d, attr, school_type) {
+						var formatted_data = d3.format(".2f")(d[attr]);
+
+						// rename the Twomile attribute to something more descriptive
+						if (attr == "Twomile") {
+							attr = "Percentage (2 Mile Neighborhood)"
+						}
+						var text = d.race + " " + attr + ": " + formatted_data;
+						if (attr != "Enrollment") {
+							text += "%";
+						}
+
+						var title;
+						if (school_type == "charter") {
+							title = "Charter Schools";
+						}
+						else {
+							title = "Public Non-Charter Schools";
+						}
+
+						// set the tooltip text
+						tooltip_header.text(title);
+						tooltip_body.text(text);
+						tooltip.style("display", "block"); // make the tooltip div visible
+
+						// position the tooltip correctly
+						var x = d3.event.pageX + "px";
+						var y = d3.event.pageY + "px";
+						tooltip.style("left", x).style("top", y);
+					}
+
+					// mouse hover for the chart
+					function set_mouse_hover(attribute, charter) {
+						var attr_class = "rect." + attribute + "-" + charter;
+						var highlight_class = charter + "-highlighted";
+
+						d3.selectAll(attr_class).on("mouseover", function(d) {
+							set_tooltip(d, attribute, charter);
+							d3.select(this).classed(highlight_class, true);
+						})
+						.on("mouseout", function(d) {
+							tooltip.style("display", "none");
+							d3.select(this).classed(highlight_class, false);
+						})
+					}
+
+					var attributes = ["Enrollment", "Percentage", "Imbalance", "Twomile"];
+					for (var i = 0; i < attributes.length; i++) {
+						set_mouse_hover(attributes[i], "charter");
+						set_mouse_hover(attributes[i], "noncharter")
+					}
+				});
+			});
+		</script>
+		<div class="text">
+		<p>Underneath all of this is a deeper question: How much does the cause of segregation matter?</p>
+
+		    <p>Imagine if a landlord, confronted with a leaking roof, responded by saying that the real problem is just too much rain. It’s true that, in some sense, rain causes leaks—but only because there was something wrong with the roof in the first place. And at the end of the day, the leaks are still a problem that needs to be fixed.</p></section>
+
+		    <section id="article-section-7"><p>Likewise, it’s true that diversity in schools is increasing. But it’s only making segregation worse because of flaws that already existed in the education system. The fundamental defect in American schools—the hole in the roof, if you will—is that they have long exhibited patterns of racial concentration, mostly due to housing segregation and decades of discriminatory education policy. If schools were already integrated to begin with, you’d expect increasing diversity to raise all boats relatively evenly. Most schools would get less white, but few would find themselves truly segregated. Instead, in a long-segregated system, the effects of increased diversity are inevitably lopsided. Schools already suffering from a relatively high degree of segregation have found themselves completely isolated.</p>
+
+		    <p>Because of this, demographic changes are not experienced evenly. Because black students were already overrepresented in segregated schools, they often bear the brunt of an increase in racial isolation, whatever the proximate cause of those increases. That’s why the share of black students in segregated schools has increased by 11 percent nationwide in the last two decades, faster than the share of either white students or nonwhite students overall, both of which have risen by about 6 percent, according to my analysis.</p>
+
+		    <p>And, ultimately, there’s just not much reason to think that identifying the exact cause of resegregation will ameliorate its harms. The vast majority of research into school segregation does not focus on its causes, but rather on the costs of attending a racially isolated school. There are many. They include <a href="http://www.school-diversity.org/pdf/DiversityResearchBriefNo1.pdf" data-omni-click="r'article',r'',d,r'intext',r'12',r'555614'">reduced academic achievement</a>, <a href="http://www.school-diversity.org/pdf/DiversityResearchBriefNo4.pdf" data-omni-click="r'article',r'',d,r'intext',r'13',r'555614'">increased exposure</a> to the criminal justice system, and significantly <a href="http://school-diversity.org/pdf/DiversityResearchBriefNo5Oct2016Big.pdf" data-omni-click="r'article',r'',d,r'intext',r'14',r'555614'">worsened professional and educational outcomes</a>. Children in integrated schools find it easier to <a href="http://www.school-diversity.org/pdf/DiversityResearchBriefNo3.pdf" data-omni-click="r'article',r'',d,r'intext',r'15',r'555614'">live and work</a> in diverse environments; children in segregated schools are more prone to hold <a href="http://www.school-diversity.org/pdf/DiversityResearchBriefNo8.pdf" data-omni-click="r'article',r'',d,r'intext',r'16',r'555614'">racially prejudiced views</a> later in life. Racial isolation also tends to deprive children of color of what are sometimes obliquely called “networks of opportunity”—in plain language, the day-to-day connections most people rely on to get a job or get into college.</p>
+
+		    <p>And of course, there’s another reason to worry about school segregation, regardless of its cause: the problem of second-class citizenship. Ironically, this problem generates less discussion than wonky, technocratic concerns about test scores and income mobility. But it was pivotal in propelling the school-integration push of the 1960s and 70s, and for good reason. Civil-rights advocates are not wrong to worry that, beyond any set of individual outcomes, it is not healthy nor sustainable for a society to effectively consign most children of color to an alternative system of schools. Doing so helps construct or reinforce ideas about racial caste in the minds of Americans—and, worst of all, in the minds of the children themselves.</p>
+
+		    <p>None of these ills will heal themselves so long as segregated schools exist, or grow in number. And right now, such schools <em>are </em>growing in number, for reasons ranging from the benign to the nefarious. Dedicated advocates and smart policymakers can thwart school resegregation, and eventually reverse it. But it will not reverse itself.</p>
+		</section>
+	</div>
+	</body>
+</html>

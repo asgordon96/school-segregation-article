@@ -1,0 +1,59 @@
+rect.charter {
+	fill: #7fc97f;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+rect.noncharter {
+	fill: #beaed4;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+rect.charter-highlighted {
+	fill: #fdc086;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+rect.noncharter-highlighted {
+	fill: #fdc086;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+rect.charter-legend {
+	fill: #7fc97f;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+rect.noncharter-legend {
+	fill: #beaed4;
+	stroke-width: 1px;
+	stroke: black;
+}
+
+div.tooltip {
+	display: none;
+	background: white;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 200px;
+	padding-left: 10px;
+	font-size: 12px;
+	position: absolute;
+}
+
+div.text {
+	margin-left: 25px;
+	width: 700px;
+}
+
+a {
+	color: #458CD5;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
